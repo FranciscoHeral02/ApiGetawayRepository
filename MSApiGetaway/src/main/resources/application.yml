@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    config:
+      uri: http://localhost:8081
+  config:
+    import: configserver:http://localhost:8081
+     
+#spring:
+#  application:
+#    name: api-getaway
+#  cloud:
+#    gateway:
+#     discovery:
+#       locator:
+#         enabled: true
+#     routes:
+#      - id: ms-business-partner
+#        uri: lb://ms-business-partner
+#        predicates:
+#          - Path=/BusinessPartnerService/**
+#      - id: ms-items
+#        uri: lb://ms-items
+#        predicates:
+#         - Path=/ItemService/**
+#   
+#server:
+#  port: 8080
+#
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    serviceUrl:
+#      defaultZone: http://localhost:8082/eureka/
+#    enabled: true
+#  instance:
+#    hostname: localhost
+
+  
